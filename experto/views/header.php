@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <script src="../tools/js/bootstrap.min.js"></script>
     <script src="../tools/jquery-3.3.1.min.js"></script>
-    <title>Sistema</title>
+    <title>Sistema experto</title>
 </head>
 
 <header>

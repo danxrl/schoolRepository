@@ -14,13 +14,4 @@ class AtomoController {
     public function read( $atomo_id = '' ){
         return $this->model->read($atomo_id);
     }
-/*
-    public function update( $almacen_data = array() ){
-        return $this->model->update($almacen_data);
-    }
-
-    public function delete( $almacen_id = '' ){
-        return $this->model->delete($almacen_id);
-    }
-*/
 }

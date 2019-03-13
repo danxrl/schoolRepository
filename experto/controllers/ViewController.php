@@ -6,9 +6,4 @@ class ViewController {
         require_once(self::$view_path . 'header.php');
         require_once(self::$view_path . $view . '.php');
     }
-
-    public function load_preview( $view ) {
-        require_once(self::$view_path . 'header.php');
-        require_once(self::$view_path . $view . '.php');
-    }
 }

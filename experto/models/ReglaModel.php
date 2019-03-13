@@ -34,23 +34,4 @@ class ReglaModel extends Model {
 
         return $data;
     }
-/* 
-    public function update( $almacen_data = array() ){
-        foreach ($almacen_data as $key => $value) {
-            $$key = $value;
-        }
-        $this->query = "UPDATE almacen SET
-                            nombre = '$nombre',
-                            direccion = '$direccion',
-                            telefono = '$telefono',
-                            correo = '$correo'
-                        WHERE id = '$id'";
-        $this->set_query();
-    }
-
-    public function delete( $almacen_id = '' ){
-        $this->query = "DELETE FROM almacen WHERE id = '$almacen_id'";
-        $this->set_query();
-    }
- */
 }

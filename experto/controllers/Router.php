@@ -17,14 +17,12 @@ class Router {
 
             case 'atomos':
                 if (!isset($_POST['r'])) $controller->load_view('atomos');
-                elseif ($_POST['r'] == 'crear-atomo') $controller->load_view('crear-atomo');
-                elseif ($_POST['r'] == 'lista-de-atomos') $controller->load_view('lista-de-atomos');
+                elseif ($_POST['r'] == 'atomo-add') $controller->load_view('atomo-add');
                 break;
 
             case 'reglas':
                 if (!isset($_POST['r'])) $controller->load_view('reglas');
-                elseif ($_POST['r'] == 'crear-regla') $controller->load_view('crear-regla');
-                elseif ($_POST['r'] == 'lista-de-reglas') $controller->load_view('lista-de-reglas');
+                elseif ($_POST['r'] == 'regla-add') $controller->load_view('regla-add');
                 break;
 
             default:

@@ -1,7 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine On
 
-RewriteBase /htprojects/school/sistema
+RewriteBase /schoolRepository/experto
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-F

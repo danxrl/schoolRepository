@@ -1,25 +1,25 @@
 <?php
 
-$atomo = new AtomoController();
-$atomo_data = $atomo->read();
+$atomo_controller = new AtomoController();
+$atomo_data = $atomo_controller->read();
 ?>
-
+<div class="container" >
 <section class="content-form" id="atomo_form">
-    <h2 class="sub-title">Seccion de atomos</h2>
+    <h2 class="sub-title">Sección de átomos</h2>
     <div class="form-group width-12">
         <form method="post">
-            <input type="hidden" name="r" value="agregar_atomo">
+            <input type="hidden" name="r" value="atomo-add">
             <input type="submit" value="Agregar" class="form-control btn btn-principal"/>
         </form>
             <input type="search" placeholder="BUSCAR . . ." class="form-control btn expand btn-principal" id="searchTerm" onkeyup="doSearch()"/>
     </div>
-    </section>
+</section>
 <div id="dor" class="text-center">
     <table class="text-center" id="datos" border="20">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Atomo</th>
+                <th>Átomo</th>
                 <!-- <th colspan="2">Opciones</th> -->
             </tr>
         </thead>
@@ -46,6 +46,7 @@ $atomo_data = $atomo->read();
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 </div>
 </body>
 

@@ -1,15 +1,15 @@
 <?php
 
-$cliente = new ClienteController();
-$cliente_data = $cliente->read();
+$regla_controller = new ReglaController();
+$regla_data = $regla_controller->read();
 
 ?>
-
-<section class="content-form" id="cliente_form">
-    <h2 class="sub-title">Seccion clientes</h2>
+<div class="container">
+<section class="content-form" id="regla_form">
+    <h2 class="sub-title">Sección de reglas</h2>
     <div class="form-group width-12">
         <form method="post">
-            <input type="hidden" name="r" value="cliente-add">
+            <input type="hidden" name="r" value="regla-add">
             <input type="submit" value="Agregar" class="form-control btn btn-principal"/>
         </form>
             <input type="search" placeholder="BUSCAR . . ." class="form-control btn expand btn-principal" id="searchTerm" onkeyup="doSearch()"/>
@@ -19,34 +19,25 @@ $cliente_data = $cliente->read();
     <table class="text-center" id="datos" border="20">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th colspan="2">Opciones</th>
+                <th>Regla</th>
+                <th>Atomos</th>
+                <th>Consecuente</th>
+                <th>Signo</th>
+                <!-- <th colspan="2">Opciones</th> -->
             </tr>
         </thead>
         <tbody>
-            <?php foreach($cliente_data as $data): ?>
+            <?php foreach($regla_data as $data): ?>
             <tr>
-                <td style="width: 70px;"><?php echo $data['id']; ?></td>
-                <td style="width: 450px;"><?php echo $data['nombre']; ?></td>
-                <td>
-                    <form method="post">
-                        <input type="hidden" name="r" value="cliente-edit">
-                        <input type="hidden" name="cliente_id" value="<?php echo $data['id'] ?>">
-                        <input type="submit" value="Actualizar" class="form-control btn btn-principal"/>
-                    </form>
-                </td>
-                <td>
-                    <form method="post">
-                        <input type="hidden" name="r" value="cliente-delete">
-                        <input type="hidden" name="cliente_id" value="<?php echo $data['id'] ?>">
-                        <input type="submit" value="Eliminar" class="form-control btn btn-principal"/>
-                    </form>
-                </td>
+                <td style="width: 100px;"><?php echo $data['idr']; ?></td>
+                <td style="width: 100px;"><?php echo $data['atomos']; ?></td>
+                <td style="width: 100px;"><?php echo $data['consecuente']; ?></td>
+                <td style="width: 450px;"><?php echo $data['signo']; ?></td>
             </tr>        
             <?php endforeach; ?>
         </tbody>
     </table>
+</div>
 </div>
 </body>
 
