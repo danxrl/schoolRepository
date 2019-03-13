@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteBase /htprojects/school/sistema
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-F
+
+RewriteRule ^(.*)$ index.php?r=$1 [L]
