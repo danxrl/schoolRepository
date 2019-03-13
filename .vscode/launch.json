@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Pastel",
+      "request": "launch",
+      "mainClass": "Pastel"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Espiral",
+      "request": "launch",
+      "mainClass": "Espiral"
+    }
+  ]
+}

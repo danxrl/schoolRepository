@@ -1,0 +1,52 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Monito",
+      "request": "launch",
+      "mainClass": "Monito"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Graphics",
+      "request": "launch",
+      "mainClass": "Graphics"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Ventana",
+      "request": "launch",
+      "mainClass": "Ventana"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Amistad",
+      "request": "launch",
+      "mainClass": "Amistad"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Hex2IPconvertidora",
+      "request": "launch",
+      "mainClass": "Hex2IPconvertidora"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Clock",
+      "request": "launch",
+      "mainClass": "Clock"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - EjercicioConstructores",
+      "request": "launch",
+      "mainClass": "EjercicioConstructores"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Prueba",
+      "request": "launch",
+      "mainClass": "Prueba"
+    }
+  ]
+}
