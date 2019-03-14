@@ -2,6 +2,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Editor",
+      "request": "launch",
+      "mainClass": "Editor",
+      "projectName": "schoolRepository_a441d382"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Visor",
+      "request": "launch",
+      "mainClass": "Visor",
+      "projectName": "schoolRepository_a441d382"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Pastel",
       "request": "launch",
       "mainClass": "Pastel"
