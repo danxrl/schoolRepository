@@ -19,22 +19,17 @@ $regla_data = $regla_controller->read();
     <table class="text-center" id="datos" border="20">
         <thead>
             <tr>
+                <th>Nombre</th>
                 <th>Regla</th>
-                <th>Atomos</th>
-                <th>Consecuente</th>
-                <th>Signo</th>
-                <!-- <th colspan="2">Opciones</th> -->
             </tr>
         </thead>
         <tbody>
-            <?php foreach($regla_data as $data): ?>
+            <?php for($i = 0; $i < sizeof($regla_data['reglas']); $i++): ?>
             <tr>
-                <td style="width: 100px;"><?php echo $data['idr']; ?></td>
-                <td style="width: 100px;"><?php echo $data['atomos']; ?></td>
-                <td style="width: 100px;"><?php echo $data['consecuente']; ?></td>
-                <td style="width: 450px;"><?php echo $data['signo']; ?></td>
+                <td style="width: 100px;"><?php echo $regla_data['reglas'][$i]; ?></td>
+                <td style="width: 400px;"><?php echo '<b style="color: RED">' . $regla_data['antecedentes'][$i] . ' </b><b> -> </b><b style="color: BLUE;"> ' . $regla_data['consecuentes'][$i] . '</b>'; ?></td>
             </tr>        
-            <?php endforeach; ?>
+            <?php endfor; ?>
         </tbody>
     </table>
 </div>

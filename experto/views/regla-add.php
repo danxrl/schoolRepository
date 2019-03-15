@@ -22,7 +22,7 @@ if($_POST['r'] == 'regla-add' && !isset($_POST['crud'])): ?>
                         <div class="input-group col-md-4 mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text bg-dark text-white">
-                                    <input type="checkbox" name="atomo<?php echo '-'.$id ?>" value="<?php echo $atomo['atomo'] ?>"> Agregar
+                                    <input type="checkbox" name="atomo<?php echo '-'.$id ?>" value="<?php echo $atomo['id'] ?>"> Agregar
                                 </div>
                                 <div class="input-group-text bg-secondary text-white">
                                     <input type="checkbox" name="atomo<?php echo '.'.$id ?>" > Negar
@@ -46,7 +46,7 @@ if($_POST['r'] == 'regla-add' && !isset($_POST['crud'])): ?>
                                     <input type="checkbox" name="cons<?php echo '.'.$id ?>" > Negar
                                 </div>
                             </div>
-                            <input type="text" class="form-control" value="<?php echo $atomo['id'] ?>" disabled>
+                            <input type="text" class="form-control" value="<?php echo $atomo['atomo'] ?>" disabled>
                         </div>
                         <?php $id++; $negado++; ?>
                         <?php endforeach; ?>
@@ -71,7 +71,6 @@ if($_POST['r'] == 'regla-add' && !isset($_POST['crud'])): ?>
 </body>
 <?php
 
-
 elseif($_POST['r'] == 'regla-add' && $_POST['crud'] == 'set') :
 
     $datos = array();
@@ -86,30 +85,50 @@ elseif($_POST['r'] == 'regla-add' && $_POST['crud'] == 'set') :
             }
         }
     }
-    
+
     $data = _separar_datos($datos);
     $consecuentes = _separar_datos($consec);
 
-    $reglas_controller = new ReglaController();
-    
-    $new_regla= array(
-        'idr' => $_POST['regla'],
-        'atomos' => $data,
-        'consecuentes' => $consecuentes,
-    );
-
-    $regla = $reglas_controller->create($new_regla);
-
-    /* $template = "
-        <script>
-            window.onload = function () {
-                alert('Regla agregada correctamente.');
-                window.location.href = 'reglas';
+    $existe = false;
+    foreach ($data as $valor) {
+        foreach ($consecuentes as $key) {
+            if ($valor[0] == $key[0]) {
+                $existe = true;
+                break;
             }
-        </script>
-    ";
+        }
+    }
 
-    print($template); */
+    if (!$existe) {
+        $reglas_controller = new ReglaController();
+        $new_regla= array(
+            'idr' => $_POST['regla'],
+            'atomos' => $data,
+            'consecuentes' => $consecuentes,
+        );
+
+        $regla = $reglas_controller->create($new_regla);
+
+        $template = "
+            <script>
+                window.onload = function () {
+                    alert('Regla agregada correctamente.');
+                    window.location.href = 'reglas';
+                }
+            </script>
+        ";
+    } else {
+        $template = "
+            <script>
+                window.onload = function () {
+                    alert('No puedes repetir antecedentes en los consecuentes.');
+                    window.location.href = 'reglas';
+                }
+            </script>
+        ";
+    }
+
+    print($template);
 
 elseif($_POST['r'] == 'regla-add' && $_POST['crud'] == 'unset') :
     $template = "
