@@ -12,12 +12,12 @@ if($_POST['r'] == 'atomo-add' && !isset($_POST['crud'])): ?>
                     </div> 
                 </div>
                 <div class="form-group width-12">
-                    <input type="submit" value="Aceptar" class="form-control btn btn-principal"/>
+                    <input type="submit" value="Aceptar" class="form-control btn btn-principal bg-success text-white"/>
                     <input type="hidden" name="r" value="atomo-add">
                     <input type="hidden" name="crud" value="set">
                 </form>
                 <form>
-                    <input type="submit" value="Cancelar" class="form-control btn btn-principal"/>
+                    <input type="submit" value="Cancelar" class="form-control btn btn-principal bg-danger text-white"/>
                     <input type="hidden" name="r" value="atomo-add">
                     <input type="hidden" name="crud" value="unset">
                 </div>

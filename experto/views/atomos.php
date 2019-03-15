@@ -9,7 +9,7 @@ $atomo_data = $atomo_controller->read();
     <div class="form-group width-12">
         <form method="post">
             <input type="hidden" name="r" value="atomo-add">
-            <input type="submit" value="Agregar" class="form-control btn btn-principal"/>
+            <input type="submit" value="Agregar" class="form-control btn btn-principal bg-primary text-white"/>
         </form>
             <input type="search" placeholder="BUSCAR . . ." class="form-control btn expand btn-principal" id="searchTerm" onkeyup="doSearch()"/>
     </div>
