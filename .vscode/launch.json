@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Reloj",
+      "request": "launch",
+      "mainClass": "reloj.Reloj"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Pastel",
       "request": "launch",
       "mainClass": "Pastel"
