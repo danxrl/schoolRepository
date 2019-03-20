@@ -2,9 +2,23 @@
   "configurations": [
     {
       "type": "java",
+<<<<<<< HEAD
       "name": "CodeLens (Launch) - Reloj",
       "request": "launch",
       "mainClass": "reloj.Reloj"
+=======
+      "name": "CodeLens (Launch) - Editor",
+      "request": "launch",
+      "mainClass": "Editor",
+      "projectName": "schoolRepository_a441d382"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Visor",
+      "request": "launch",
+      "mainClass": "Visor",
+      "projectName": "schoolRepository_a441d382"
+>>>>>>> 7e5589a42be82b32ccd2c58dd74ec0b79f2ac2fb
     },
     {
       "type": "java",
