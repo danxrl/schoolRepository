@@ -70,37 +70,41 @@ class ReglaModel extends Model {
     private function _juntar_atomos($data_array) {
         $aux_array = array();
         $string = '';
-        $siguiente_regla = $data_array[0]['regla'];
-        $regla_actual = '';
-        for ($i=0; $i < sizeof($data_array); $i++) {
-            if ($regla_actual != $siguiente_regla) {
-                array_push($aux_array, $string);
-                $string = '';
-                $regla_actual = $siguiente_regla;
-
-                if ($data_array[$i]['signo'] == 0) { $string = '~' . $data_array[$i]['atomo']; }
-                else { $string = $data_array[$i]['atomo']; }
-
-                if (isset($data_array[$i+1]['regla'])) {
-                    $siguiente_regla = $data_array[$i+1]['regla'];
-                } else {
+        if (isset($data_array[0]['regla'])) {
+            $siguiente_regla = $data_array[0]['regla'];
+            $regla_actual = '';
+            for ($i=0; $i < sizeof($data_array); $i++) {
+                if ($regla_actual != $siguiente_regla) {
                     array_push($aux_array, $string);
-                    array_shift($aux_array);
-                }
-
-            } else {
-
-                if ($data_array[$i]['signo'] == 0) { $string = $string . ' ^ ~' . $data_array[$i]['atomo']; }
-                else { $string = $string . ' ^ ' . $data_array[$i]['atomo']; }
-
-                if (isset($data_array[$i+1]['regla'])) {
-                    $siguiente_regla = $data_array[$i+1]['regla'];
+                    $string = '';
+                    $regla_actual = $siguiente_regla;
+    
+                    if ($data_array[$i]['signo'] == 0) { $string = '~' . $data_array[$i]['atomo']; }
+                    else { $string = $data_array[$i]['atomo']; }
+    
+                    if (isset($data_array[$i+1]['regla'])) {
+                        $siguiente_regla = $data_array[$i+1]['regla'];
+                    } else {
+                        array_push($aux_array, $string);
+                        array_shift($aux_array);
+                    }
+    
                 } else {
-                    array_push($aux_array, $string);
-                    array_shift($aux_array);
+    
+                    if ($data_array[$i]['signo'] == 0) { $string = $string . ' ^ ~' . $data_array[$i]['atomo']; }
+                    else { $string = $string . ' ^ ' . $data_array[$i]['atomo']; }
+    
+                    if (isset($data_array[$i+1]['regla'])) {
+                        $siguiente_regla = $data_array[$i+1]['regla'];
+                    } else {
+                        array_push($aux_array, $string);
+                        array_shift($aux_array);
+                    }
                 }
             }
+            return $aux_array;
+        } else {
+            return array();
         }
-        return $aux_array;
     }
 }
