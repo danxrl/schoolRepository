@@ -14,4 +14,12 @@ class ReglaController {
     public function read( $regla_id = '' ){
         return $this->model->read($regla_id);
     }
+
+    public function read_one( $id = '' ){
+        return $this->model->read_one($id);
+    }
+
+    public function obtener_clausulas(){
+        return $this->model->obtener_clausulas();
+    }
 }

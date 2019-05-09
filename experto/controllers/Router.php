@@ -25,6 +25,11 @@ class Router {
                 elseif ($_POST['r'] == 'regla-add') $controller->load_view('regla-add');
                 break;
 
+            case 'adelante':
+                if (!isset($_POST['r'])) $controller->load_view('adelante');
+                elseif ($_POST['r'] == 'adelante-core') $controller->load_view('adelante-core');
+                break;
+
             default:
                 $controller->load_view('error404');
                 break;
