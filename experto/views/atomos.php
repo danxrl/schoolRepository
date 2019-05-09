@@ -15,11 +15,11 @@ $atomo_data = $atomo_controller->read();
     </div>
 </section>
 <div id="dor" class="text-center">
-    <table class="text-center" id="datos" border="20">
-        <thead>
+    <table class="text-center table table-dark table-striped" id="datos">
+        <thead class="thead-light">
             <tr>
-                <th>Id</th>
-                <th>Átomo</th>
+                <th scope="col">Id</th>
+                <th scope="col">Átomo</th>
                 <!-- <th colspan="2">Opciones</th> -->
             </tr>
         </thead>

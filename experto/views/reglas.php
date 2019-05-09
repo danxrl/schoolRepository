@@ -16,8 +16,8 @@ $regla_data = $regla_controller->read();
     </div>
 </section>
 <div id="dor" class="text-center">
-    <table class="text-center" id="datos" border="20">
-        <thead>
+    <table class="text-center table table-dark table-striped" id="datos">
+        <thead class="thead-light">
             <tr>
                 <th>Nombre</th>
                 <th>Regla</th>
@@ -27,7 +27,7 @@ $regla_data = $regla_controller->read();
             <?php for($i = 0; $i < sizeof($regla_data['reglas']); $i++): ?>
             <tr>
                 <td style="width: 100px;"><?php echo $regla_data['reglas'][$i]; ?></td>
-                <td style="width: 400px;"><?php echo '<b style="color: RED">' . $regla_data['antecedentes'][$i] . ' </b><b> -> </b><b style="color: BLUE;"> ' . $regla_data['consecuentes'][$i] . '</b>'; ?></td>
+                <td style="width: 400px;"><?php echo '<b style="color: RED">' . $regla_data['antecedentes'][$i] . ' </b><b> -> </b><b style="color: GREEN;"> ' . $regla_data['consecuentes'][$i] . '</b>'; ?></td>
             </tr>        
             <?php endfor; ?>
         </tbody>

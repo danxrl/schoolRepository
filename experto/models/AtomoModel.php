@@ -20,8 +20,8 @@ class AtomoModel extends Model {
 
     public function read( $atomo_id = '' ){
         $this->query = ($atomo_id)
-            ? "SELECT * FROM atomos WHERE id = '$atomo_id'"
-            : "SELECT * FROM atomos";
+            ? "SELECT * FROM atomos WHERE id = '$atomo_id' ORDER BY id ASC"
+            : "SELECT * FROM atomos ORDER BY id ASC";
 
         $this->get_query();
         $num_rows = count($this->rows);
